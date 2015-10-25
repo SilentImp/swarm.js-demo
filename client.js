@@ -86,8 +86,3 @@
     });
 
 })();
-
-
-
-// https://youtu.be/t8Td3Oq47yE?t=22981
-// https://www.youtube.com/watch?v=uyZKWyciSXY
