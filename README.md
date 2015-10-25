@@ -2,6 +2,8 @@
 
 Для запуска:
 
+    // Установка browserify
+    npm install -g browserify
     // Установка зависимостей
     npm install
     // Сборка бандла для браузера
