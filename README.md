@@ -1,16 +1,20 @@
-# Пример использования swarm.js 
+# Пример использования swarm.js
 
 Для запуска:
 
-    // Установка browserify
+    // Установим browserify
     npm install -g browserify
-    // Установка зависимостей
+    // Клонируем репозиторий
+    git clone git@github.com:SilentImp/swarm.js-demo.git
+    // Войдем в директорий
+    св swarm.js-demo
+    // Установим зависимости
     npm install
-    // Сборка бандла для браузера
-    npm run rebild
-    // Запуск сервера
+    // Соберем бандл для браузера (так как использован es6 и require)
+    npm run rebuild
+    // Запустим сервер на localhost:8080
     npm run start
-    // Откройте index.html в браузере
+    // Откроем index.html в браузере
     open index.html
 
 # Доклады
@@ -43,4 +47,3 @@
 > **Victor Grishchenko**
 > Я отправил приглашение в slack.
 > Ещё есть такой вариант, как github issues.
- 
