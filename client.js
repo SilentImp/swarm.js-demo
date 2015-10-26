@@ -13,12 +13,12 @@
          */
         constructor () {
             let swarm = require('swarm')
-                , Model = require('./data_types/model.js')
+                , Text = require('swarm/lib/Text')
                 , id = Math.round(new Date().getTime() * Math.random() * 1000000)
                 , swarm_host = new swarm.Host(id);
 
             this.input = document.querySelector('textarea');
-            this.model = new Model('APP');
+            this.model = new Text('APP');
             this.model.on(this.eventMonitor.bind(this));
             this.textChangedBind = this.textChanged.bind(this);
 
@@ -30,8 +30,16 @@
          * События, которые возникают у Модели
          */
         eventMonitor (spec, val, source) {
+            console.log('event happened', arguments);
+            console.log(spec.op());
             if (spec.op() == 'init') {
+                // Модель инициализирована
                 this.textInitialized();
+            } else {
+                // Модель изменена
+                if (this.model.text != this.input.value) {
+                    this.input.value = this.model.text;
+                }
             }
         }
 
@@ -49,21 +57,11 @@
         }
 
         /**
-         * Получили информацию о том, что кто то изменил Модель
-         */
-        textUpdate () {
-            if (this.model.text != this.input.value) {
-                this.input.value = this.model.text;
-            }
-        }
-
-        /**
          * Пользователь изменил текст. Сохраняем изменения в Модели.
          */
         textChanged () {
             if (this.model.text != this.input.value) {
-                this.model.text = this.input.value;
-                this.model.save();
+                this.model.set(this.input.value);
             }
         }
 

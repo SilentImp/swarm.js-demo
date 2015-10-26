@@ -3,10 +3,10 @@
 var http = require('http')
     , ws_lib = require('ws')
     , swarm = require('swarm')
-    , Model = require('./data_types/model.js')
+    , Text = require('swarm/lib/Text')
     , file_storage = new swarm.FileStorage('storage')
     , swarm_host = new swarm.Host('swarm~nodejs', 0, file_storage)
-    , app = new Model('APP')
+    , app = new Text('APP')
     , http_server
     , ws_server;
 
