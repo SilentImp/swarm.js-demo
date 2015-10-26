@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "just swarm.js test",
   "scripts": {
-    "rebild": "browserify client.js -t babelify -o bundle.js",
+    "rebuild": "browserify client.js -t babelify -o bundle.js",
     "start": "node server.js",
     "watch": "watchify client.js -t babelify -o bundle.js"
   },
