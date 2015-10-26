@@ -47,4 +47,3 @@
 > **Victor Grishchenko**
 > Я отправил приглашение в slack.
 > Ещё есть такой вариант, как github issues.
- 
