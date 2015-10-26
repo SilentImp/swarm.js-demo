@@ -30,13 +30,11 @@
          * События, которые возникают у Модели
          */
         eventMonitor (spec, val, source) {
-            console.log('event happened', arguments);
-            console.log(spec.op());
             if (spec.op() == 'init') {
                 // Модель инициализирована
                 this.textInitialized();
             } else {
-                // Модель изменена
+                // Модель инициализирована
                 if (this.model.text != this.input.value) {
                     this.input.value = this.model.text;
                 }
@@ -50,7 +48,6 @@
          */
         textInitialized () {
             this.input.value = this.model.text;
-            this.model.on('set', this.textUpdate.bind(this));
             this.input.removeEventListener('keyup', this.textChangedBind);
             this.input.addEventListener('keyup', this.textChangedBind);
             this.input.removeAttribute('disabled');
